@@ -1,0 +1,21 @@
+<div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://unsplash.it/800/300');">
+    <div class="row">
+      <div class="col-xs-12 text-center welcome">
+        <div class="banner-content">
+          <h4><%= @restaurant.name %></h4>
+          <%= link_to "Write review", new_restaurant_review_path(@restaurant), class: "btn btn-primary", id: "new_review" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h5><%= @restaurant.category %></h5>
+    <h5><%= @restaurant.address %></h5>
+    <h5><%= @restaurant.phone_number %></h5>
+    <% @restaurant.reviews.each do |review| %>
+      <ul>
+        <li><h3><%= review.rating %></h3></li>
+        <h5><%= review.content %></h5>
+      </ul>
+  <% end %>
+  </div>

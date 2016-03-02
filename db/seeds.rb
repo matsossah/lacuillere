@@ -32,3 +32,5 @@ restaurants_attributes = [
   },
 ]
 restaurants_attributes.each { |params| Restaurant.create!(params) }
+
+
